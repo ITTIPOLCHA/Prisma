@@ -3,6 +3,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
+  //----Create----
   const newUser = await prisma.user.create({
     data: {
       email: "example2@example.com",
@@ -10,6 +11,7 @@ async function main() {
     },
   });
 
+  /*----Detail-Create----
   const userId = newUser.id;
 
   const newPost = await prisma.post.create({
@@ -27,7 +29,9 @@ async function main() {
       userId: userId,
     },
   });
+  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 
+  /*----Update----
   const updatedUser = await prisma.user.update({
     where: {
       id: 1,
@@ -36,17 +40,30 @@ async function main() {
       name: "Updated Name",
     },
   });
+  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 
+  /*----Delete----
+  const deleteUser = await prisma.user.delete({
+    where: {
+      id: 1,
+    },
+  });
+  ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+  //----Read----
   const allUsers = await prisma.user.findMany();
+
   console.log(allUsers);
   console.log(" ");
   console.log("๊User created:", newUser);
-  console.log(" ");
-  console.log("User updated:", updatedUser);
-  console.log(" ");
-  console.log("Post created:", newPost);
-  console.log(" ");
-  console.log("Profile created:", newProfile);
+  //console.log(" ");
+  //console.log("Post created:", newPost);
+  //console.log(" ");
+  //console.log("Profile created:", newProfile);
+  //console.log(" ");
+  //console.log("User updated:", updatedUser);
+  //console.log(" ");
+  //console.log("User deleted:", deleteUser);
 }
 
 main()
