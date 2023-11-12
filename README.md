@@ -1,3 +1,31 @@
+# Prisma CLI Commands
+
+This document provides a quick reference to the Prisma Command Line Interface (CLI) commands necessary for managing and interacting with your Prisma setup.
+
+## Installation
+
+# Install Prisma CLI
+npm install @prisma/cli --save-dev
+
+# Install Prisma Client
+npm install @prisma/client
+
+# Initializing and Managing Prisma
+## Generate Prisma Client from your Prisma schema
+npx prisma generate
+
+## Create a new migration based on schema changes
+npx prisma migrate dev --name your_migration_name
+
+## Apply migrations to your database
+npx prisma migrate deploy
+
+## Launch Prisma Studio for database inspection and management
+npx prisma studio
+
+# Run
+npx ts-node ./index.ts
+
 ## Prisma Client Capabilities
 
 ### 1. CRUD Operations
